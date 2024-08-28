@@ -3,14 +3,14 @@ CFLAGS = `pkg-config --cflags gtk+-3.0` -Wall
 LDFLAGS = `pkg-config --libs gtk+-3.0`
 PREFIX = /usr
 
-all: tasktracker
+all: task-heatmap
 
-tasktracker: task_tracker.c
-	$(CC) $(CFLAGS) -o tasktracker task_tracker.c $(LDFLAGS)
+task-heatmap: task_heatmap.c
+	$(CC) $(CFLAGS) -o task-heatmap task_heatmap.c $(LDFLAGS)
 
-install: tasktracker
-	install -Dm755 tasktracker $(DESTDIR)$(PREFIX)/bin/tasktracker
+install: task-heatmap
+	install -Dm755 task-heatmap $(DESTDIR)$(PREFIX)/bin/task-heatmap
 
 clean:
-	rm -f tasktracker
+	rm -f task-heatmap
 
